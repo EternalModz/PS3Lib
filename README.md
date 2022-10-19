@@ -10,6 +10,7 @@ using PS3Lib;
 public static PS3API PS3 = new PS3API();
 PS3.ChangeAPI(SelectAPI.ControlConsole);// CCAPI
 PS3.ChangeAPI(SelectAPI.TargetManager);// TMAPI
+PS3.ChangeAPI(SelectAPI.PS3Manager);// PS3MAPI
 PS3.GetCurrentAPIName(); // Returns current api as sting
 PS3.ConnectTarget(0); // Open's Ccapi connect menu or connects to current tmapi target - boolean
 PS3.AttachProcess(); // Attach - boolean
@@ -35,12 +36,21 @@ PS3.Extension.ReadString(0x0000000); // String
 PS3.Extension.ReadBytes(0x000000, 1337/*Length to read*/);
 //... Basically there is one for every primitive datatype.
 
-// Ccapi notify message
+// CCAPI notify message
 PS3.CCAPI.Notify(CCAPI.NotifyIcon.INFO, "Hello World!");
 
-// Ring buzzer
+// CCAPI Ring buzzer
 PS3.CCAPI.RingBuzzer(CCAPI.BuzzerMode.Single);
 PS3.CCAPI.RingBuzzer(CCAPI.BuzzerMode.Double);
 PS3.CCAPI.RingBuzzer(CCAPI.BuzzerMode.Triple);
 PS3.CCAPI.RingBuzzer(CCAPI.BuzzerMode.Continuous);
+
+
+// PS3MAPI Notify message
+PS3.PS3MAPI.Notify("Hello World!");
+
+// PS3MAPI Ring buzzer
+PS3.PS3MAPI.RingBuzzer(PS3MAPI.PS3_CMD.BuzzerMode.Single);
+PS3.PS3MAPI.RingBuzzer(PS3MAPI.PS3_CMD.BuzzerMode.Double);
+PS3.PS3MAPI.RingBuzzer(PS3MAPI.PS3_CMD.BuzzerMode.Tripple);
 ```
