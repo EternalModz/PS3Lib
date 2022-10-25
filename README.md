@@ -1,12 +1,12 @@
 # PS3Lib
-PS3Lib with PS3mapi modified for 4k form designer support.
+PS3Lib with PS3MAPI modified for 4k form designer support.
 
 ```CSHARP
 // Add PS3Lib folder to root of your Visual Studio project
 // Using directive
 using PS3Lib;
 
-// Connect to ps3
+// Connect to PS3
 public static PS3API PS3 = new PS3API();
 PS3.ChangeAPI(SelectAPI.ControlConsole);// CCAPI
 PS3.ChangeAPI(SelectAPI.TargetManager);// TMAPI
@@ -15,7 +15,7 @@ PS3.GetCurrentAPIName(); // Returns current api as sting
 PS3.ConnectTarget(0); // Open's Ccapi connect menu or connects to current tmapi target - boolean
 PS3.AttachProcess(); // Attach - boolean
 
-// Disconnect from ps3
+// Disconnect from PS3
 PS3.DisconnectTarget();
 
 // Write to memory
